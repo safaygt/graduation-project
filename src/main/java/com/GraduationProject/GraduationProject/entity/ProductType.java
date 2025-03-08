@@ -1,30 +1,24 @@
 package com.GraduationProject.GraduationProject.entity;
 
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.*;
+import jakarta.persistence.Table;
 import lombok.Data;
-
 @Entity
-@Table(name="usr")
+@Table(name="productType")
 @Data
-public class Usr {
-
+public class ProductType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
 
-    @Column(nullable = false)
-    private String name;
-
-    @Column(nullable = false)
-    private String lastName;
-
     @Column(nullable = false, unique = true)
-    private String username;
+    private String productName;
 
     @Column(nullable = false)
-    private String password;
+    private Float effect;
 
 
 }
