@@ -1,30 +1,24 @@
 package com.GraduationProject.GraduationProject.entity;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name="usr")
+@Table(name = "recycle")
 @Data
-public class Usr {
-
+public class Recycle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
 
-    @Column(nullable = false)
-    private String name;
-
-    @Column(nullable = false)
-    private String lastName;
-
     @Column(nullable = false, unique = true)
-    private String username;
+    private String recycleName;
 
-    @Column(nullable = false)
-    private String password;
+
+    @ManyToOne
+    @JoinColumn(name="fkusr",nullable = false)
+    private Usr usr;
 
 
 }
