@@ -66,11 +66,12 @@ public class JwtUtil {
 
     private Claims getClaims(String token) {
         return Jwts.parser()
-                .verifyWith(getSigningKey())
+                .verifyWith(getSigningKey()) // Doğrulama için verifyWith kullanılıyor
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
     }
+
 
     private SecretKey getSigningKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
