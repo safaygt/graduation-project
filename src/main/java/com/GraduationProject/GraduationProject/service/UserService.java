@@ -43,24 +43,20 @@ public class UserService implements UserDetailsService {
         this.passwordEncoder = passwordEncoder;
         this.jwtUtil = jwtUtil;
     }
-    public String register(UsrDTO usrDTO) {
 
-        if(usrRepo.findByUsername(usrDTO.getUsername()) != null){
-            return "This username is already used";
+    public boolean usernameExists(String username) {
+        return usrRepo.findByUsername(username) != null;
+    }
 
-        }
-
+    public void register(UsrDTO usrDTO) {
         Usr usr = new Usr();
         usr.setName(usrDTO.getName());
         usr.setLastName(usrDTO.getLastName());
         usr.setUsername(usrDTO.getUsername());
         usr.setPassword(passwordEncoder.encode(usrDTO.getPassword()));
-
-
         usrRepo.save(usr);
-        return "User has been saved successfully";
-
     }
+
 
 
     public String login(UsrDTO userDTO, AuthenticationManager authenticationManager) {
