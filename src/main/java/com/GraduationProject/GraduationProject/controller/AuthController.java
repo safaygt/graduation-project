@@ -39,9 +39,16 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody UsrDTO usrDTO){
+        if(userService.usernameExists(usrDTO.getUsername())){
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body("Bu kullanıcı adı zaten kullanılıyor!");
+        }
 
-        return ResponseEntity.ok(userService.register(usrDTO));
+        userService.register(usrDTO);
+        return ResponseEntity.ok("Kayıt başarılı.");
     }
+
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UsrDTO usrDTO){

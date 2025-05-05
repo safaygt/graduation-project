@@ -19,7 +19,7 @@ public class MainController {
     @PostMapping("/upload")
     public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) {
         try {
-            String prediction = mainService.predictRecyclableMaterial(file);
+            String prediction = mainService.predictAndSave(file);
             return ResponseEntity.ok(prediction);
         } catch (IOException e) {
             return ResponseEntity.badRequest().body("Dosya işlenirken hata oluştu.");
