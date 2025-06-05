@@ -63,12 +63,12 @@ public class MainService {
         });
 
         HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);
-
         ResponseEntity<String> response = restTemplate.postForEntity(FLASK_API_URL, requestEntity, String.class);
 
         Map<String, Object> responseMap = objectMapper.readValue(response.getBody(), new TypeReference<Map<String, Object>>() {});
         List<Map<String, Object>> detections = (List<Map<String, Object>>) responseMap.get("detections");
         Map<String, Object> classCounts = (Map<String, Object>) responseMap.get("class_counts");
+
 
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Usr usr = usrRepo.findByUsername(userDetails.getUsername());
@@ -95,7 +95,7 @@ public class MainService {
                 productRepo.save(product);
 
                 double effect = productType.getEffect();
-                totalEffect += count * effect * 0.1; // Hesaplama formülü
+                totalEffect += count * effect;
                 classEffects.put(className, effect);
             }
         }
@@ -108,4 +108,5 @@ public class MainService {
 
         return objectMapper.writeValueAsString(result);
     }
+
 }

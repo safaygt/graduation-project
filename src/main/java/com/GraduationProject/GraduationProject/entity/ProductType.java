@@ -18,7 +18,7 @@ public class ProductType {
     private String productName;
 
     @Column(nullable = false)
-    private Float effect;
+    private Double effect;
 
 
 }
