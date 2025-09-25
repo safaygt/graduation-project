@@ -68,6 +68,7 @@ public class MainService {
         Map<String, Object> responseMap = objectMapper.readValue(response.getBody(), new TypeReference<Map<String, Object>>() {});
         List<Map<String, Object>> detections = (List<Map<String, Object>>) responseMap.get("detections");
         Map<String, Object> classCounts = (Map<String, Object>) responseMap.get("class_counts");
+        String processedImageUrl = (String) responseMap.get("processed_image_url");
 
 
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -105,8 +106,8 @@ public class MainService {
         result.put("class_counts", classCounts);
         result.put("total_effect", totalEffect);
         result.put("class_effects", classEffects);
+        result.put("processed_image_url", processedImageUrl); // Frontend'e gönderilecek
 
         return objectMapper.writeValueAsString(result);
     }
-
 }
