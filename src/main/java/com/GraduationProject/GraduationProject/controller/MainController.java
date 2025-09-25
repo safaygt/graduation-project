@@ -10,7 +10,6 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*") // React erişimi için
 public class MainController {
 
     @Autowired
