@@ -10,6 +10,7 @@ public class UsrDTO {
     private String lastName;
     private String username;
     private String password;
+    private boolean isConsentChecked;
 
 
 }
