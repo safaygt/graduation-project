@@ -13,7 +13,8 @@ public class ProductService {
     @Autowired
     private ProductRepo productRepo;
 
-    public List<Product> getProductsByRecycleId(Integer recycleId) {
+    public List<Product> getProductsEntitiesByRecycleId(Integer recycleId) {
         return productRepo.findByFkRecycle_Id(recycleId);
     }
+
 }

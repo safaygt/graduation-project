@@ -106,7 +106,7 @@ public class MainService {
         result.put("class_counts", classCounts);
         result.put("total_effect", totalEffect);
         result.put("class_effects", classEffects);
-        result.put("processed_image_url", processedImageUrl); // Frontend'e gönderilecek
+        result.put("processed_image_url", processedImageUrl);
 
         return objectMapper.writeValueAsString(result);
     }
