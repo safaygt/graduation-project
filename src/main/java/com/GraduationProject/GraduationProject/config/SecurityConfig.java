@@ -41,7 +41,11 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers("/auth/**").permitAll()
+<<<<<<< HEAD
                         .requestMatchers("/api/upload").authenticated() // /api/upload güvenli hale getirildi
+=======
+                        .requestMatchers("/api/upload").authenticated()
+>>>>>>> 1d85f96f0898ba5eb360863b07dfede6c86eda80
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 

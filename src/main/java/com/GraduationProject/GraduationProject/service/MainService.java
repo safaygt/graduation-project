@@ -34,7 +34,8 @@ import java.util.Map;
 public class MainService {
 
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String FLASK_API_URL = "http://127.0.0.1:5000/predict";
+    private final String FLASK_API_URL = "http://model:5000/predict";
+
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Autowired
@@ -106,7 +107,7 @@ public class MainService {
         result.put("class_counts", classCounts);
         result.put("total_effect", totalEffect);
         result.put("class_effects", classEffects);
-        result.put("processed_image_url", processedImageUrl); // Frontend'e gönderilecek
+        result.put("processed_image_url", processedImageUrl);
 
         return objectMapper.writeValueAsString(result);
     }

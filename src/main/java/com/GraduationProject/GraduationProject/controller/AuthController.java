@@ -66,9 +66,10 @@ public class AuthController {
             jwtResponse.setResponseCode(HttpStatus.OK);
             return ResponseEntity.ok(jwtResponse);
         } catch (BadCredentialsException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Giriş hatalı");
+            // DEĞİŞİKLİK BURADA: 404 yerine 401 Unauthorized döndürün
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Kullanıcı adı veya şifre hatalı.");
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("There is an error!");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Bir hata oluştu!");
         }
     }
 }
