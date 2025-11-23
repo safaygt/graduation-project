@@ -1,5 +1,4 @@
 package com.GraduationProject.GraduationProject.config;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,52 +14,23 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-@Configuration
-@EnableWebSecurity
-@EnableMethodSecurity
-        (
-                securedEnabled = true,
-                jsr250Enabled = true,
-                prePostEnabled = true
-        )
-
-public class SecurityConfig {
-
-
-    @Autowired
-    private JwtAuthenticationFilter jwtAuthenticationFilter;
-
-
-
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-
+@Configuration @EnableWebSecurity @EnableMethodSecurity(securedEnabled = true, jsr250Enabled = true, prePostEnabled = true) public class SecurityConfig {
+    @Autowired private JwtAuthenticationFilter jwtAuthenticationFilter;
+    @Bean public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .sessionManagement(session ->
+                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers("/auth/**").permitAll()
-<<<<<<< HEAD
-                        .requestMatchers("/api/upload").authenticated() // /api/upload güvenli hale getirildi
-=======
                         .requestMatchers("/api/upload").authenticated()
->>>>>>> 1d85f96f0898ba5eb360863b07dfede6c86eda80
-                        .anyRequest().authenticated())
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
-
+                        .anyRequest().authenticated()).addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
-
-
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+    @Bean public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
+    @Bean public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 }

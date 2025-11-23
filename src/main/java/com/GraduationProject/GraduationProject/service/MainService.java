@@ -34,7 +34,8 @@ import java.util.Map;
 public class MainService {
 
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String FLASK_API_URL = "http://model:5000/predict";
+    private final String FLASK_API_URL = "http://gp-model:5000/predict";
+
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 

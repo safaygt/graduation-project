@@ -18,11 +18,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-<<<<<<< HEAD
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173")); // Sadece frontend'e izin ver
-=======
         configuration.setAllowedOrigins(Arrays.asList("http://localhost", "http://localhost:80"));
->>>>>>> 1d85f96f0898ba5eb360863b07dfede6c86eda80
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("authorization", "content-type", "x-auth-token"));
         configuration.setExposedHeaders(Arrays.asList("x-auth-token"));
