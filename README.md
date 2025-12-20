@@ -78,7 +78,7 @@ src/main/resources/application.properties
 📄 Example Configuration
 
 Below is a sample application.properties file used for local development:
-<code>
+```properties
 spring.application.name=GraduationProject
 
 
@@ -100,7 +100,7 @@ jwt.expiration=3600000
 
 server.port=8080
 server.address=0.0.0.0
-</code>
+```
 
 
 
@@ -129,10 +129,10 @@ This will start:
 Related Repositories
 
 🔹 Frontend (React)
-📎 [Graduation Project Frontend → GitHub](https://github.com/safaygt/GraduationProjectFrontEnd.git)
+[Graduation Project Frontend → GitHub](https://github.com/safaygt/GraduationProjectFrontEnd.git)
 
 🔹 AI Model API (Flask + YOLO)
-📎 [Graduation Project Model Deployment → GitHub](https://github.com/safaygt/GraduationProjectDeployModel.git)
+[Graduation Project Model Deployment → GitHub](https://github.com/safaygt/GraduationProjectDeployModel.git)
 
 Note: The backend service must be running before the frontend and model services can function properly.
 
