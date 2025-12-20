@@ -78,7 +78,6 @@ src/main/resources/application.properties
 📄 Example Configuration
 
 Below is a sample application.properties file used for local development:
-
 <code>
 spring.application.name=GraduationProject
 
