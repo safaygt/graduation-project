@@ -65,7 +65,7 @@ git clone https://github.com/safaygt/graduation-project.git
 cd graduation-project/backend/GraduationProject
 ```
 
-## 2. Create `application.properties`
+### 2. Create `application.properties`
 
 **For security reasons**, the `application.properties` file is **NOT committed** to this repository and is listed in `.gitignore`.
 
@@ -102,13 +102,13 @@ server.port=8080
 server.address=0.0.0.0
 ```
 
-3. Run Locally (Without Docker)
+### 3. Run Locally (Without Docker)
 
 ```bash
 ./gradlew bootRun
 ```
 
-4. Run with Docker Compose
+### 4. Run with Docker Compose
 
 ```bash
 docker-compose up --build -d
