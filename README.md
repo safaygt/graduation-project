@@ -1,4 +1,4 @@
-# 🎓 Graduation Project – Backend
+# Graduation Project – Backend
 
 This repository contains the **backend (server-side)** implementation of a **TÜBİTAK-supported Graduation Project** aimed at increasing recycling awareness through **image-based waste classification**.
 
@@ -6,12 +6,12 @@ The backend is developed using **Spring Boot** and is responsible for **user aut
 
 ---
 
-## 📌 About the Project
+## About the Project
 
 **Graduation Project** is a web-based system where users upload images of waste materials.  
 These images are analyzed by a **Flask-based AI model (YOLO)**, and the detected recyclable objects are stored and analyzed on a **user basis**.
 
-### 🔧 Backend Responsibilities
+### Backend Responsibilities
 
 <ul>
   <li>User authentication and authorization (JWT)</li>
@@ -23,7 +23,7 @@ These images are analyzed by a **Flask-based AI model (YOLO)**, and the detected
 
 ---
 
-## 🎯 Features
+## Features
 
 <ul>
   <li> JWT-based authentication (<code>/auth/**</code>)</li>
@@ -38,7 +38,7 @@ These images are analyzed by a **Flask-based AI model (YOLO)**, and the detected
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 <ul>
   <li> Java 17</li>
@@ -55,9 +55,9 @@ These images are analyzed by a **Flask-based AI model (YOLO)**, and the detected
 
 ---
 
-## ⚙️ Setup & Installation
+## Setup & Installation
 
-### 🔽 1. Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/safaygt/graduation-project.git
@@ -65,9 +65,9 @@ git clone https://github.com/safaygt/graduation-project.git
 cd graduation-project/backend/GraduationProject
 ```
 
-## 🛠️ 2. Create `application.properties`
+## 2. Create `application.properties`
 
-⚠️ **For security reasons**, the `application.properties` file is **NOT committed** to this repository and is listed in `.gitignore`.
+**For security reasons**, the `application.properties` file is **NOT committed** to this repository and is listed in `.gitignore`.
 
 You must create this file manually at the following path:
 
@@ -75,7 +75,7 @@ You must create this file manually at the following path:
 src/main/resources/application.properties
 ```
 
-📄 Example Configuration
+Example Configuration
 
 Below is a sample application.properties file used for local development:
 ```properties
@@ -132,10 +132,10 @@ This will start:
 
 Related Repositories
 
-🔹 Frontend (React)
+Frontend (React)
 [Graduation Project Frontend → GitHub](https://github.com/safaygt/GraduationProjectFrontEnd.git)
 
-🔹 AI Model API (Flask + YOLO)
+AI Model API (Flask + YOLO)
 [Graduation Project Model Deployment → GitHub](https://github.com/safaygt/GraduationProjectDeployModel.git)
 
 Note: The backend service must be running before the frontend and model services can function properly.
