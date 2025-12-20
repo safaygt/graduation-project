@@ -133,10 +133,11 @@ This will start:
 Related Repositories
 <ul>
 <li>Frontend (React)</li>
-[Graduation Project Frontend → GitHub](https://github.com/safaygt/GraduationProjectFrontEnd.git)
+<p>[Graduation Project Frontend → GitHub](https://github.com/safaygt/GraduationProjectFrontEnd.git)</p>
+
 
 <li>AI Model API (Flask + YOLO)</li>
-[Graduation Project Model Deployment → GitHub](https://github.com/safaygt/GraduationProjectDeployModel.git)
+<p>[Graduation Project Model Deployment → GitHub](https://github.com/safaygt/GraduationProjectDeployModel.git)</p>
 </ul>
 Note: The backend service must be running before the frontend and model services can function properly.
 
