@@ -108,7 +108,7 @@ server.address=0.0.0.0
 ./gradlew bootRun
 ```
 
-### 4. Run with Docker Compose
+### 4. Run with Docker Compose (Recommended)
 
 ```bash
 docker-compose up --build -d
