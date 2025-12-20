@@ -102,7 +102,11 @@ server.port=8080
 server.address=0.0.0.0
 ```
 
+3. Run Locally (Without Docker)
 
+```bash
+./gradlew bootRun
+```
 
 4. Run with Docker Compose
 
