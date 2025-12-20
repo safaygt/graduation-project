@@ -82,7 +82,7 @@ Below is a sample application.properties file used for local development:
 <code>
 spring.application.name=GraduationProject
 
-# ===============================
+
 # Database Configuration
 # ===============================
 spring.datasource.url=jdbc:postgresql://localhost:5432/graduation
@@ -90,19 +90,19 @@ spring.datasource.username=postgres
 spring.datasource.password=postgres
 spring.datasource.driver-class-name=org.postgresql.Driver
 
-# ===============================
+
 # JPA / Hibernate
 # ===============================
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 
-# ===============================
+
 # JWT Configuration
 # ===============================
 jwt.secret=CHANGE_THIS_SECRET_KEY
 jwt.expiration=3600000
 
-# ===============================
+
 # Server Configuration
 # ===============================
 server.port=8080
